@@ -1,0 +1,117 @@
+  {
+  "name": "My Animal Crossing Cards Collection",
+  "short_name": "My AC Amiibo Cards",
+  "icons": [
+    {
+      "src" : "public/images/icons/apple-touch-icon-57x57.png",
+      "sizes" : "57x57",
+      "type" : "image/png"
+    },
+    {
+      "src" : "public/images/icons/apple-touch-icon-114x114.png",
+      "sizes" : "114x114",
+      "type" : "image/png"
+    },
+    {
+      "src" : "public/images/icons/apple-touch-icon-72x72.png",
+      "sizes" : "72x72",
+      "type" : "image/png"
+    },
+    {
+      "src" : "public/images/icons/apple-touch-icon-144x144.png",
+      "sizes" : "144x144",
+      "type" : "image/png"
+    },
+    {
+      "src" : "public/images/icons/apple-touch-icon-60x60.png",
+      "sizes" : "60x60",
+      "type" : "image/png"
+    },
+    {
+      "src" : "public/images/icons/apple-touch-icon-120x120.png",
+      "sizes" : "120x120",
+      "type" : "image/png"
+    },
+    {
+      "src" : "public/images/icons/apple-touch-icon-76x76.png",
+      "sizes" : "76x76",
+      "type" : "image/png"
+    },
+    {
+      "src" : "public/images/icons/apple-touch-icon-152x152.png",
+      "sizes" : "152x152",
+      "type" : "image/png"
+    },
+    {
+      "src" : "public/images/icons/apple-touch-icon-180x180.png",
+      "sizes" : "180x180",
+      "type" : "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "lang": "en-US",
+  "orientation" : "any",
+  "splash_screens": [
+    {
+    "src": "splash/200x320.png",
+      "sizes": "200x320",
+      "type" : "image/png"
+    },
+    {
+      "src": "splash/320x200.png",
+      "sizes": "320x200",
+      "type" : "image/png"
+    },
+    {
+    "src": "splash/320x480.png",
+      "sizes": "320x480",
+      "type" : "image/png"
+    },
+    {
+    "src": "splash/480x320.png",
+      "sizes": "480x320",
+      "type" : "image/png"
+    },
+    {
+    "src": "splash/480x800.png",
+      "sizes": "480x800",
+      "type" : "image/png"
+    },
+    {
+    "src": "splash/720x1200.png",
+      "sizes": "720x1200",
+      "type" : "image/png"
+    },
+    {
+    "src": "splash/800x480.png",
+      "sizes": "800x480",
+      "type" : "image/png"
+    },
+    {
+    "src": "splash/960x1200.png",
+      "sizes": "960x1200",
+      "type" : "image/png"
+    },
+    {
+    "src": "splash/1280x720.png",
+      "sizes": "1280x720",
+      "type" : "image/png"
+    },
+    {
+    "src": "splash/1280x1200.png",
+      "sizes": "1280x1200",
+      "type" : "image/png"
+    },
+    {
+    "src": "splash/1600x960.png",
+      "sizes": "1600x960",
+      "type" : "image/png"
+    },
+    {
+      "src": "splash/1920x1200.png",
+      "sizes": "1920x1200",
+      "type" : "image/png"
+    }],
+    "theme_color": "#3E8F79"
+}

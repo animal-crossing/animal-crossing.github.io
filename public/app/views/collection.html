@@ -1,0 +1,23 @@
+<div class="avatar col-xs-12">
+    <img ng-src="{{avatar}}"> {{username}} <span ng-if="action">has {{cards.length}} cards in</span> {{action}}
+</div>
+<div class="col-xs-12 text-center share">
+    <share-button></share-button>
+</div>
+<ul class="show-only" ng-hide="action != 'missing'" ng-cloak>
+    <li>
+        <label>
+            <input type="checkbox" ng-init="favorites = false" ng-click="favorites = !favorites"> Favorites</label>
+    </li>
+</ul>
+<div class="cards row">
+    <div ng-repeat="card in cards = (collection | byAction:action:favorites)" class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+        <img class="img-responsive amiibo-card" ng-src="http://animal-crossing.com/amiibo-cards/assets/img/cards/{{card.image}}" alt="{{card.name}}">
+        <div class="controls" ng-if="!preview">
+            <span class="btn btn-collection pull-left" ng-click='updateOwn(card)'><i class="fa" ng-class="card.own ? 'fa-check' : 'fa-plus' "></i></span>
+            <span class="btn btn-repeated" ng-click='updateRepeated(card)'><i class="fa" ng-class="card.repeated ? 'fa-clone' : 'fa-repeat' "></i></span>
+            <span class="btn btn-star pull-right" ng-click='updateFav(card)'><i class="fa fa-star" ng-class="card.favorite ? 'fav' : ''"></i></span>
+        </div>
+    </div>
+</div>
+<div class="btn btn-collection btn-lg save fa fa-floppy-o" ng-if="!preview" ng-show="changed" ng-click="saveChanges()"> Save Changes</div>

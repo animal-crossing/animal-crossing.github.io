@@ -1,0 +1,214 @@
+@import url(https://fonts.googleapis.com/css?family=Arvo:400,700);
+html {
+    position: relative;
+}
+
+body {
+    font-family: "Arvo", "Times New Roman", serif;
+}
+
+.navbar-collapse.in {
+    &.collapse,
+    &.collapsing {
+        border-top: 5px solid #e1e1e1;
+    }
+}
+
+.navbar-custom {
+    background: url("../images/pattern-header.png?1441998611") repeat scroll center (center / 288px) 205px, rgba(0, 0, 0, 0) url("../images/pattern-stripes.jpg") repeat fixed left (top / 288px) 205px;
+    border-bottom: 5px solid #e1e1e1;
+}
+
+.navbar-header {
+    height: 8.4em;
+}
+
+.navbar-nav {
+    margin-top: 2.2em;
+}
+
+.nav {
+    &.navbar-nav li a {
+        background: #00957b none repeat scroll 0 0;
+        color: #eee;
+        &:hover,
+        &:focus {
+            background: #026352 none repeat scroll 0 0;
+            color: #eee;
+        }
+    }
+    li {
+        &:first-child a {
+            border-radius: 1em 0 0 1em;
+        }
+        &:last-child a {
+            border-radius: 0 1em 1em 0;
+        }
+    }
+}
+
+.navbar-brand img {
+    width: 311px;
+}
+
+.navbar-nav {
+    font-weight: bold;
+}
+
+footer {
+    background-color: #f9f9f9;
+    border-top: 1px solid #e5e5e5;
+    color: #999;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.cards div {
+    margin-bottom: 1em;
+    margin-top: 1em;
+    text-align: center;
+}
+
+.amiibo-card {
+    margin: 0 auto;
+}
+
+.controls {
+    padding-left: 15px;
+    padding-right: 15px;
+    @media screen and (max-width: 768px) and (min-width: 520px){
+        padding-left: 0;
+        padding-right: 0;
+        width: 230px;
+        margin: 0 auto;
+    }
+    @media screen and (max-width: 520px){
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.save {
+    bottom: 1em;
+    font-size: 2em;
+    position: fixed;
+    right: 2em;
+}
+
+.share{
+    margin: 1em 0 2em;
+}
+
+.btn-star {
+    background: #4cd8e6 none repeat scroll 0 0;
+    border-radius: 0.5em;
+    box-shadow: 0 3px 0 #249ca8;
+    color: #fff;
+    &.focus,
+    &:focus,
+    &:hover {
+        color: #eee;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.125) inset;
+    }
+}
+
+.btn-collection {
+    background: #56c0b5 none repeat scroll 0 0;
+    border-radius: 0.5em;
+    box-shadow: 0 3px 0 #00957b;
+    color: white;
+    &.focus,
+    &:focus,
+    &:hover {
+        color: #fff;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.125) inset;
+    }
+}
+
+.btn-show-more {
+    background: #00957b none repeat scroll 0 0;
+    color: #eee;
+    margin-bottom: 2em;
+    &:hover{
+        box-shadow: 0 3px 0 #eee;
+        color: #eee;
+        text-decoration: none;
+    }
+}
+
+.btn-repeated {
+    background: #eb974e none repeat scroll 0 0;
+    border-radius: 0.5em;
+    box-shadow: 0 3px 0 #00957b;
+    color: white;
+    &.focus,
+    &:focus,
+    &:hover {
+        color: #fff;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.125) inset;
+    }
+}
+
+.fa-star.fav {
+    color: yellow;
+}
+
+.show-only {
+    list-style: none;
+    padding: 0 1.5em;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.avatar {
+    margin-bottom: 1em;
+    text-align: center;
+    img {
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto;
+    }
+    &.villages{
+        height: 17em;
+        img{
+            cursor: pointer;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .btn {
+        &.btn-collection:hover {
+            box-shadow: 0 3px 0 #00957b;
+        }
+        &.btn-star:hover {
+            box-shadow: 0 3px 0 #249ca8;
+        }
+        &.btn-repeated:hover {
+            box-shadow: 0 3px 0 #249ca8;
+        }
+    }
+    .navbar-collapse {
+        background: #00957b;
+    }
+    .navbar-brand img {
+        padding-top: 10px;
+        width: 240px;
+    }
+    .navbar-nav {
+        margin-top: 0.5em;
+    }
+    .nav li {
+        &:first-child a,
+        &:last-child a{
+            border-radius: 0;
+        }
+    }
+    .avatar{
+        &.villages{
+            height: 15em;
+        }
+    }
+}

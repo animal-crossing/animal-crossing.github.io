@@ -1,0 +1,16 @@
+<div class="form-group">
+    <label for="inputlg">Search {{villager.username}} <span ng-if="villager.username">Village</span>: </label>
+    <input class="form-control input-lg" id="inputlg" type="text" ng-model="villager.username">
+</div>
+<div class="col-xs-12 total-villagers text-center">
+	<p>There are {{users.length}} villagers.</p>
+	<p>And your search is showing {{filteredUsers.length}} of them.</p>
+</div>
+<div class="col-xs-12">
+    <div class="avatar villages col-xs-6 col-md-3" ng-repeat="user in filteredUsers = (users | filter:villager.username) | limitTo: limit">
+        <img ng-src="{{user.avatar}}" class="img-responsive" ng-click="goToVillage(user.username)"> {{user.username}} Village
+    </div>
+</div>
+<div class="text-center" ng-if="limit < filteredUsers.length">
+  <button ng-click="showMore()" class="btn btn-lg btn-show-more">Show More Villagers</button>
+</div>
