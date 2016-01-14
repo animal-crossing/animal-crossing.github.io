@@ -31,6 +31,8 @@ angular
 
         $scope.changed = userModel.changed;
 
+        getSeries();
+
         // Previewing neighbor Collection
         if (username != userModel.username) {
             if (!userModel.preview || username != neighbor.username) {
@@ -50,7 +52,7 @@ angular
                             neighbor.avatar = user.avatar
                             neighbor.collection = user.collection
 
-                            updateCollection(neighbor);
+                            updateCollection(neighbor, true);
 
                             userModel.preview = true;
 
@@ -64,7 +66,7 @@ angular
                     }
                 })
             } else {
-                updateCollection(neighbor);
+                updateCollection(neighbor, true);
             }
         } else {
             updateCollection(userModel);
@@ -86,8 +88,21 @@ angular
             });
         }
 
-        function updateCollection(user) {
-            $scope.collection = user.cards;
+        function updateCollection(user, neighbor) {
+            if (user.cards.length < 200 && !neighbor){
+                userService.getSeries2.query(function(data) {
+                    $scope.collection = user.cards.concat(data);
+
+                    userModel.cards = $scope.collection;
+
+                    userService.userCollection.update({
+                        userCollection: userModel.collection
+                    }, $scope.collection);
+                });
+            }else{
+                $scope.collection = user.cards;
+            }
+
             $scope.avatar = user.avatar;
             $scope.username = user.username;
         }
@@ -120,9 +135,17 @@ angular
             triggerChange(false);
         }
 
+        $scope.changeSeries = function (serie){
+            userModel.serie = serie;
+        }
+
         function triggerChange(change) {
             userModel.changed = change;
             $scope.changed = userModel.changed;
+        }
+
+        function getSeries(){
+            $scope.series = userModel.serie;
         }
 
     }]);

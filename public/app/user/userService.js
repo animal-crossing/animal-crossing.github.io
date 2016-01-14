@@ -18,7 +18,8 @@ angular
                 network: '',
                 client_id: '',
                 preview: false,
-                changed: false
+                changed: false,
+                serie: 1
             }
         }
 
@@ -42,7 +43,7 @@ angular
             }
         });
 
-        userService.getDefaultCollection = $resource(baseUrl + '/3191b');
+        userService.getDefaultCollection = $resource(baseUrl + '/5325p');
 
         userService.userCollection = $resource(baseUrl + '/:userCollection', {
             userCollection: '@collection'
@@ -52,6 +53,8 @@ angular
                 isArray: true
             }
         });
+
+        userService.getSeries2 = $resource(baseUrl + '/1u829');
 
         userService.postUserCollection = $resource(baseUrl);
 

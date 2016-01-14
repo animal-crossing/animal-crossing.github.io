@@ -30,4 +30,30 @@ angular
             });
             return filtered;
         };
+    })
+    .filter('bySerie', function(){
+        return function(items, serie){
+            if(!items){
+                return;
+            }
+
+            var filtered = [];
+
+            if(serie === undefined){
+                serie = 1;
+            }
+
+            angular.forEach(items, function(item){
+                switch(serie){
+                    case 1:
+                        item.release_set == 1 ? filtered.push(item) : false;
+                        break;
+                    case 2:
+                        item.release_set == 2 ? filtered.push(item) : false;
+                        break;
+                }
+            });
+
+            return filtered;
+        }
     });

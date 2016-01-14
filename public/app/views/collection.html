@@ -10,8 +10,14 @@
             <input type="checkbox" ng-init="favorites = false" ng-click="favorites = !favorites"> Favorites</label>
     </li>
 </ul>
+<div class="col-xs-12">
+    <div class="btn-group">
+        <label class="btn btn-primary" ng-model="series" ng-click="changeSeries(series)" uib-btn-radio="1">Series 1</label>
+        <label class="btn btn-primary" ng-model="series" ng-click="changeSeries(series)" uib-btn-radio="2">Series 2</label>
+    </div>
+</div>
 <div class="cards row">
-    <div ng-repeat="card in cards = (collection | byAction:action:favorites)" class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+    <div ng-repeat="card in cards = (collection | byAction:action:favorites | bySerie: series)" class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
         <img class="img-responsive amiibo-card" ng-src="http://animal-crossing.com/amiibo-cards/assets/img/cards/{{card.image}}" alt="{{card.name}}">
         <div class="controls" ng-if="!preview">
             <span class="btn btn-collection pull-left" ng-click='updateOwn(card)'><i class="fa" ng-class="card.own ? 'fa-check' : 'fa-plus' "></i></span>

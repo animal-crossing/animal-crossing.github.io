@@ -1,6 +1,8 @@
 angular
     .module('app')
     .controller('mainController', ['$scope', 'userService', 'session', 'storageService', '$location', function($scope, userService, session, storageService, $location) {
+        $scope.series = 1;
+
         if (session && session.get('id')) {
             storageService.populateStorageData(session);
             $location.path('/' + session.get('username'));
