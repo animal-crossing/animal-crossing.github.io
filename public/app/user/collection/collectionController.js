@@ -89,22 +89,32 @@ angular
         }
 
         function updateCollection(user, neighbor) {
-            if (user.cards.length < 200 && !neighbor){
-                userService.getSeries2.query(function(data) {
-                    $scope.collection = user.cards.concat(data);
-
-                    userModel.cards = $scope.collection;
-
-                    userService.userCollection.update({
-                        userCollection: userModel.collection
-                    }, $scope.collection);
+            if(user.cards.length == 100 && !neighbor){
+                userService.getSeries2.query(function(data){
+                    updateUserCollection(user, data)
                 });
-            }else{
+            }else if(user.cards.length == 200 && !neighbor)
+            {
+                userService.getSeries3.query(function(data){
+                    updateUserCollection(user, data)
+                });
+            }
+            else{
                 $scope.collection = user.cards;
             }
 
             $scope.avatar = user.avatar;
             $scope.username = user.username;
+        }
+
+        function updateUserCollection(user, data){
+            $scope.collection = user.cards.concat(data);
+
+            userModel.cards = $scope.collection;
+
+            userService.userCollection.update({
+                userCollection: userModel.collection
+            }, $scope.collection);
         }
 
         $scope.$watch(function() {

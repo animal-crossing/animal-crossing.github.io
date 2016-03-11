@@ -43,7 +43,7 @@ angular
             }
         });
 
-        userService.getDefaultCollection = $resource(baseUrl + '/5325p');
+        userService.getDefaultCollection = $resource(baseUrl + '/u0eb');
 
         userService.userCollection = $resource(baseUrl + '/:userCollection', {
             userCollection: '@collection'
@@ -55,6 +55,7 @@ angular
         });
 
         userService.getSeries2 = $resource(baseUrl + '/1u829');
+        userService.getSeries3 = $resource(baseUrl + '/3c14z');
 
         userService.postUserCollection = $resource(baseUrl);
 

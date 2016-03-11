@@ -37,22 +37,21 @@ angular
                 return;
             }
 
+            serie = serie || 1;
+
             var filtered = [];
 
-            if(serie === undefined){
-                serie = 1;
+            switch(serie){
+                case 1:
+                    filtered = items.slice(0,100);
+                    break;
+                case 2:
+                    filtered = items.slice(100,200);
+                    break;
+                case 3:
+                    filtered = items.slice(200,300);
+                    break;
             }
-
-            angular.forEach(items, function(item){
-                switch(serie){
-                    case 1:
-                        item.release_set == 1 ? filtered.push(item) : false;
-                        break;
-                    case 2:
-                        item.release_set == 2 ? filtered.push(item) : false;
-                        break;
-                }
-            });
 
             return filtered;
         }
