@@ -5,7 +5,7 @@ angular
             var filtered = [];
 
             if(action === undefined){
-            	return items;
+                return items;
             }
 
             angular.forEach(items, function(item) {
@@ -14,15 +14,15 @@ angular
                         item.own ? filtered.push(item) : false;
                         break;
                     case 'favorites':
-                    	item.favorite ? filtered.push(item) : false;
-                    	break;
+                        item.favorite ? filtered.push(item) : false;
+                        break;
                     case 'missing':
-                    	if (favorites) {
-                    		(!item.own && item.favorite) ? filtered.push(item) : false;
-                    	}else{
-                    		!item.own ? filtered.push(item) : false;
-                    	}
-                    	break;
+                        if (favorites) {
+                            (!item.own && item.favorite) ? filtered.push(item) : false;
+                        }else{
+                            !item.own ? filtered.push(item) : false;
+                        }
+                        break;
                     case 'repeated':
                         item.repeated ? filtered.push(item) : false;
                         break;
