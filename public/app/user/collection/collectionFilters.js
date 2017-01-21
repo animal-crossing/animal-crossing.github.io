@@ -51,6 +51,9 @@ angular
                 case 3:
                     filtered = items.slice(200,300);
                     break;
+                case 4:
+                    filtered = items.slice(300,400);
+                    break;
             }
 
             return filtered;

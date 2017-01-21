@@ -56,6 +56,7 @@ angular
 
         userService.getSeries2 = $resource(baseUrl + '/1u829');
         userService.getSeries3 = $resource(baseUrl + '/3c14z');
+        userService.getSeries4 = $resource(baseUrl + '/e14cf');
 
         userService.postUserCollection = $resource(baseUrl);
 

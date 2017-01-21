@@ -89,13 +89,20 @@ angular
         }
 
         function updateCollection(user, neighbor) {
-            if(user.cards.length == 100 && !neighbor){
+            if (user.cards.length == 100 && !neighbor) {
                 userService.getSeries2.query(function(data){
                     updateUserCollection(user, data)
                 });
-            }else if(user.cards.length == 200 && !neighbor)
+            }
+            else if (user.cards.length == 200 && !neighbor)
             {
                 userService.getSeries3.query(function(data){
+                    updateUserCollection(user, data)
+                });
+            }
+            else if (user.cards.length == 300 && !neighbor)
+            {
+                userService.getSeries4.query(function(data){
                     updateUserCollection(user, data)
                 });
             }
